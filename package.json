@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "pixel-borders": "^1.1.4",
     "vue": "^3.0.0-0"
   },
   "devDependencies": {
@@ -18,7 +19,12 @@
     "@vue/compiler-sfc": "^3.0.0-0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0-0"
+    "eslint-plugin-vue": "^7.0.0-0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.1",
+    "vue-loader": "^15.9.3",
+    "webpack": "^4.44.1"
   },
   "eslintConfig": {
     "root": true,
@@ -32,7 +38,11 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "no-tabs": "off",
+      "indent": "off",
+      "no-mixed-spaces-and-tabs": "off"
+    }
   },
   "browserslist": [
     "> 1%",

@@ -1,58 +1,181 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
+	<div class="hello">
+		<div class="border">
+			<div class="zero">
+				{{first}}
+			</div>
+			<div class="one">
+				{{second}}
+			</div>
+		</div>
+		<br>
+		<h3>
+			مرحبا بك في
+		</h3>
+		<h1>
+			منصة رقم التقنية
+		</h1>
+
+
+		<br>
+
+		<div>
+			<div class="pixel2"
+				 onclick="window.open('https://wa.me/966595585131/?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C+%D8%A7%D8%B1%D9%8A%D8%AF+%D8%A7%D9%84%D8%A5%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1+%D8%B9%D9%86+%D8%AE%D8%AF%D9%85%D8%A7%D8%AA+%D9%85%D9%86%D8%B5%D8%A9+%D8%B1%D9%82%D9%85+%D8%A7%D9%84%D8%AA%D9%82%D9%86%D9%8A%D8%A9')">
+				<p>
+					خدماتنا
+				</p>
+			</div>
+			<div class="pixel2" onclick="window.location.href = 'tel:0595585131'">
+				<p>
+					اتصل بنا
+				</p>
+			</div>
+		</div>
+		<div class="footer">
+			جميع الحقوق محفوظة 2020 ⓒ
+		</div>
+	</div>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
+    export default {
+        name: 'HelloWorld',
+        props: {
+            msg: String
+        },
+        data() {
+            return {
+                first: 0,
+                second: 1
+            }
+        },
+        mounted() {
+            window.setInterval(() => {
+                this.toggleNumbers();
+            }, 3000);
+
+        },
+        methods: {
+            toggleNumbers() {
+                this.first = !this.first ? 1 : 0;
+                this.second = !this.second ? 1 : 0;
+                setTimeout(() => this.first = this.first ? 1 : 0, 100)
+                setTimeout(() => this.second = this.second ? 1 : 0, 500)
+            }
+        }
+    }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+	.hello {
+		height: 100%;
+		width: 100%;
+		background-color: #ff6532;
+		padding-top: 60px;
+	}
+
+	h1 {
+		margin: unset;
+		color: white;
+		font-size: 92px;
+		font-weight: 100;
+	}
+
+	h3 {
+		margin: unset;
+		color: white;
+		font-weight: 100;
+	}
+
+	@media only screen and (max-width: 768px) {
+		h1 {
+			font-size: 12vw;
+		}
+
+		div.pixel2 {
+			margin: 10px;
+		}
+	}
+
+	.border {
+		height: 143px;
+		width: 59px;
+		border: 7px solid white;
+		border-radius: 3px;
+		margin: 0 auto;
+		position: relative;
+	}
+
+	.zero, .one {
+		font-family: "Pixelar Regular W01 Regular", serif !important;
+		color: white;
+		font-size: 66px;
+	}
+
+	.pixel2 p {
+		margin: -7px 0 0;
+	}
+
+	.pixel2 {
+		padding: 10px 10px;
+		position: relative;
+		background: white;
+
+		z-index: 2;
+		margin: auto 20px;
+		font-size: 25px;
+		color: #ff6532;
+
+		display: inline-block;
+		vertical-align: top;
+
+		width: 200px;
+		height: auto;
+
+		cursor: pointer;
+
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	.pixel2:active {
+		top: 2px;
+	}
+
+	.pixel2::before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 10px;
+		bottom: 10px;
+		left: -10px;
+		right: -10px;
+		background: white;
+		z-index: -1;
+	}
+
+	.pixel2::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 4px;
+		bottom: 4px;
+		left: -6px;
+		right: -6px;
+		background: white;
+		z-index: -1;
+	}
+
+	.footer {
+		position: absolute;
+		bottom: 5px;
+		left: calc(50% - 105px);
+	}
+
 </style>
