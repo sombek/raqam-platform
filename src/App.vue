@@ -48,5 +48,6 @@
 
 	* {
 		box-sizing: border-box;
+		direction: rtl;
 	}
 </style>
