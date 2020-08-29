@@ -1,23 +1,21 @@
 <template>
 	<div id="app">
-		<HelloWorld />
+		<HomePage />
 	</div>
 </template>
 
 <script>
-	import HelloWorld from './components/HelloWorld.vue'
+	import HomePage from './views/HomePage.vue'
 
 	export default {
 		name: 'App',
 		components: {
-			HelloWorld
+			HomePage
 		}
 	}
 </script>
 
 <style>
-	@import "~pixel-borders/docs/styles/pixel-borders.css";
-
 	@font-face {
 		font-family: Raqami;
 		src: url("./assets/fonts/Raqami v2.0.otf") format("opentype");
